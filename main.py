@@ -1,3 +1,4 @@
+import os
 import gin
 import fire
 import wandb
@@ -14,6 +15,10 @@ from lightning.pytorch.callbacks.early_stopping import EarlyStopping
 @gin.configurable
 def main(train_path=None, val_path=None, test_path=None, encoding=None, model_name=None):
     outpath = f"out/GrandStaff_{encoding}/{model_name}"
+    os.makedirs(outpath, exist_ok=True)
+    os.makedirs(f"{outpath}/hyp", exist_ok=True)
+    os.makedirs(f"{outpath}/gt", exist_ok=True)
+
     
     train_dataset, val_dataset, test_dataset = load_dataset(train_path, val_path, test_path, corpus_name=f"GrandStaff_{encoding}")
 
@@ -31,11 +36,11 @@ def main(train_path=None, val_path=None, test_path=None, encoding=None, model_na
     
     early_stopping = EarlyStopping(monitor='val_SER', min_delta=0.01, patience=5, mode="min", verbose=True)
     
-    checkpointer = ModelCheckpoint(dirpath=f"weights/{encoding}/{model_name}", filename=f"DAN", 
+    checkpointer = ModelCheckpoint(dirpath=f"weights/{encoding}/{model_name}", filename=f"{model_name}", 
                                    monitor="val_SER", mode='min',
                                    save_top_k=1, verbose=True)
 
-    trainer = Trainer(max_epochs=1, check_val_every_n_epoch=2, logger=wandb_logger, callbacks=[checkpointer, early_stopping])
+    trainer = Trainer(max_epochs=10000, logger=wandb_logger, callbacks=[checkpointer, early_stopping])
     
     trainer.fit(model, train_dataloader, val_dataloader)
 

@@ -2,7 +2,7 @@ main.train_path = "Data/grandstaff_dataset/partitions/train.txt"
 main.val_path = "Data/grandstaff_dataset/partitions/val.txt"
 main.test_path = "Data/grandstaff_dataset/partitions/test.txt"
 main.encoding = "bekrn"
-main.model_name = "FCN"
+main.model_name = "CRNN"
 
 load_data.extension = ".bekrn"
 load_data.load_distorted = True
