@@ -6,7 +6,7 @@
 This repository contains the public implementation of the paper:
 
 >**Antonio Ríos-Vila**, David Rizo, José M.Iñesta, Jorge Calvo-Zaragoza<br />
-  *[End-to-end optical music recognition for pianoform sheet music](https://zenodo.org/record/6573248)*<br />
+  *[End-to-end optical music recognition for pianoform sheet music](https://link.springer.com/article/10.1007/s10032-023-00432-z#citeas)*<br />
   International Journal on Document Analysis and Recognition
 
 Which implements an end-to-end Optical Music Recognition method for pianoform music sheets.
