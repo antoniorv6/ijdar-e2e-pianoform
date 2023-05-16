@@ -18,4 +18,20 @@ In this repository you will find:
 
 # Citation
 
-Citation information will be provided when proceedings are published.
+```bibtex
+@Article{Ríos-Vila2023,
+author={R{\'i}os-Vila, Antonio
+and Rizo, David
+and I{\~{n}}esta, Jos{\'e} M.
+and Calvo-Zaragoza, Jorge},
+title={End-to-end optical music recognition for pianoform sheet music},
+journal={International Journal on Document Analysis and Recognition (IJDAR)},
+year={2023},
+month={May},
+day={12},
+issn={1433-2825},
+doi={10.1007/s10032-023-00432-z},
+url={https://doi.org/10.1007/s10032-023-00432-z}
+}
+
+```
