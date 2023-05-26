@@ -16,6 +16,10 @@ In this repository you will find:
 - Access links to the datasets created to perform our experiments.
 - Source code of the neural network model and carried experiments in the paper.
 
+# Data
+
+The GrandStaff dataset where the experiments of the paper have been carried are [publicly available](https://sites.google.com/view/multiscore-project/datasets) for replication purposes. 
+
 # Citation
 
 ```bibtex
